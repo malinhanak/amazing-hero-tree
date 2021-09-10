@@ -1,4 +1,4 @@
-import { Icon } from "../Icon";
+import { Icon } from "components/Icon";
 
 export const ToggleDC = ({ isDC, toggleHeroUniTheme }) => {
     return isDC ? null : (

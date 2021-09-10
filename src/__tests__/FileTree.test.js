@@ -1,7 +1,7 @@
-import { render, screen, waitFor } from "../configs/test-utils";
 import userEvent from "@testing-library/user-event";
-import FileTree from "../components/FileTree";
-import FileList from "../file.json";
+import { render, screen, waitFor } from "configs/test-utils";
+import FileTree from "components/FileTree";
+import FileList from "file.json";
 
 test("renders top level folder", () => {
     render(<FileTree tree={FileList} />);

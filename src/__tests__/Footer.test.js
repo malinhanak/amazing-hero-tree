@@ -1,5 +1,5 @@
-import { render, screen } from "../configs/test-utils";
-import Footer from "../components/Footer";
+import { render, screen } from "configs/test-utils";
+import Footer from "components/Footer";
 
 test("renders amazing tree text", () => {
     render(<Footer />);

@@ -1,6 +1,6 @@
-import { render, screen } from "../configs/test-utils";
-import SubFolder from "../components/SubFolder";
-import FileList from "../file.json";
+import { render, screen } from "configs/test-utils";
+import SubFolder from "components/SubFolder";
+import FileList from "file.json";
 
 test("should render subfolder files if subfolder is open", () => {
     const state = { marvel: true, black_widow: true };

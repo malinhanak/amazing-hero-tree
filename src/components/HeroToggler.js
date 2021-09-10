@@ -1,5 +1,5 @@
 import React from "react";
-import { useDCTheme } from "../hooks/useDCTheme";
+import { useDCTheme } from "hooks/useDCTheme";
 
 const HeroToggler = ({ children }) => {
     const { isDC, toggleHeroUniTheme } = useDCTheme();

@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import { ThemeProvider } from "./context/ThemeContext";
+import { ThemeProvider } from "context/ThemeContext";
 import reportWebVitals from "./reportWebVitals";
-import { GlobalStyle } from "./theme/GlobalStyle";
+import { GlobalStyle } from "theme/GlobalStyle";
 import "@fontsource/open-sans-condensed";
 import "@fontsource/open-sans";
 

@@ -1,7 +1,7 @@
 import React from "react";
-import Accordion from "./accordion/Accordion";
-import AccordionTitle from "./accordion/AccordionTitle";
-import File from "./File";
+import Accordion from "components/accordion/Accordion";
+import AccordionTitle from "components/accordion/AccordionTitle";
+import File from "components/File";
 
 /*
     SubFolder get 4 props:

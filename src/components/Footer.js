@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import HeroToggler from "./HeroToggler";
-import { ToggleDC, ToggleMarvel } from "./toggler";
+import HeroToggler from "components/HeroToggler";
+import { ToggleDC, ToggleMarvel } from "components/toggler";
 
 function Footer() {
     return (

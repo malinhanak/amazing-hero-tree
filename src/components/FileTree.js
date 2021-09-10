@@ -1,8 +1,8 @@
 import React from "react";
-import { useAccordion } from "../hooks/useAccordion";
-import { Accordion, AccordionTitle } from "./accordion";
-import File from "./File";
-import SubFolder from "./SubFolder";
+import { useAccordion } from "hooks/useAccordion";
+import { Accordion, AccordionTitle } from "components/accordion";
+import File from "components/File";
+import SubFolder from "components/SubFolder";
 
 function FileTree({ tree }) {
     const [state, { open, close }] = useAccordion();

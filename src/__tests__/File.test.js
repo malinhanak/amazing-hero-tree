@@ -1,5 +1,5 @@
-import { render, screen } from "../configs/test-utils";
-import File from "../components/File";
+import { render, screen } from "configs/test-utils";
+import File from "components/File";
 
 test("should render filename", () => {
     const file = "my-glaxy-guardian.png";
