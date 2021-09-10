@@ -1,4 +1,4 @@
-import { createContext, useContext, useCallback } from "react";
+import { createContext } from "react";
 import { ThemeProvider as BaseThemeProvider } from "styled-components";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { themeMarvel, themeDC } from "../theme";
