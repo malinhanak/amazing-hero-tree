@@ -1,0 +1,27 @@
+[
+    {
+        "folder": "marvel",
+        "subfolders": [
+            {
+                "folder": "black_widow",
+                "files": ["w.png", "why-the-widow-is-awesome.txt"]
+            },
+            {
+                "folder": "drdoom",
+                "files": ["the-doctor.png"]
+            }
+        ],
+        "files": ["marvel_logo.png"]
+    },
+    {
+        "folder": "dc",
+        "subfolders": [
+            {
+                "folder": "aquaman",
+                "files": ["mmmmmomoa.png", "movie-review-collection.txt"]
+            }
+        ],
+        "files": ["character_list.txt"]
+    },
+    ["fact_marvel_beats_dc.txt"]
+]
