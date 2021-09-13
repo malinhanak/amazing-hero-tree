@@ -3,34 +3,33 @@ import { useAccordion } from "hooks/useAccordion";
 import { Accordion, AccordionTitle } from "components/accordion";
 import File from "components/File";
 import SubFolder from "components/SubFolder";
-import { customSorter } from "components/customSorter";
+import { customSorter } from "./customSorter";
 
 function FileTree({ tree }) {
     const [state, { open, close }] = useAccordion();
     const handleFolderOpenState = (id) => (state[id] ? close(id) : open(id));
 
-    return tree.sort(customSorter).map((item) => {
-        if (typeof item === "string") {
-            return <File key={item} file={item} />;
-        } else {
-            const folderName = item.name; // declaring this here for re-use and readability
-            return (
-                <Accordion key={folderName}>
-                    <AccordionTitle
-                        id={folderName}
+    return tree.sort(customSorter).map((tree) => {
+        // declaring this here for re-use and readability
+        const name = typeof tree === "string" ? tree : tree.name;
+        return typeof tree === "object" ? (
+            <Accordion key={name}>
+                <AccordionTitle
+                    id={name}
+                    action={handleFolderOpenState}
+                    isOpen={state[name]}
+                />
+                {state[name] && (
+                    <SubFolder
+                        data={tree.children}
                         action={handleFolderOpenState}
-                        isOpen={state[folderName]}
+                        state={state}
                     />
-                    {state[folderName] && (
-                        <SubFolder
-                            data={item.children}
-                            action={handleFolderOpenState}
-                            state={state}
-                        />
-                    )}
-                </Accordion>
-            );
-        }
+                )}
+            </Accordion>
+        ) : (
+            <File key={name} file={name} />
+        );
     });
 }
 
