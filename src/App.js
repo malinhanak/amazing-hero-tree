@@ -1,13 +1,14 @@
+import { createTree } from "createTree";
 import styled from "styled-components";
 import FileTree from "./components/FileTree";
 import Footer from "./components/Footer";
-import FileList from "./file.json";
+import FileList from "./file";
 
 function App() {
     return (
         <>
             <Container>
-                <FileTree tree={FileList} />
+                <FileTree tree={createTree(FileList)} />
             </Container>
             <Footer />
         </>
