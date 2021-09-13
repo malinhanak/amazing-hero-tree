@@ -8,7 +8,11 @@ export function renderLevels(data, state, action) {
         const name = typeof sublevel === "object" ? sublevel.name : sublevel;
         return typeof sublevel === "object" ? (
             <Accordion key={name} isSub={true}>
-                <AccordionTitle id={name} action={action} />
+                <AccordionTitle
+                    id={name}
+                    action={action}
+                    isOpen={state[name]}
+                />
                 {state[name] && renderLevels(sublevel.children, state, action)}
             </Accordion>
         ) : (
