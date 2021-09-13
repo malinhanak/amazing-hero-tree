@@ -1,44 +1,23 @@
-import React from "react";
-import Accordion from "components/accordion/Accordion";
-import AccordionTitle from "components/accordion/AccordionTitle";
-import File from "components/File";
+import { renderLevels } from "./renderLevels";
 
 /*
-    SubFolder get 4 props:
+    SubFolder get 3 props:
     - data: some object or array of object data
-    - isOpen: state check from parent to determend of a folder is in fact open.
     - Action to potentially open or close given folder.
     - the current state of the app.
 */
 
-function SubFolder({ data, isOpen, action, state }) {
+function SubFolder({ data, action, state }) {
     /*
-    maps over the data given to it via FileTree, in this case, subfolder object 
-    and file arrays.
+    send data from FileTree, into renderLevel as a param, a long with 
+    current state and the action to open and close Accordions
+    I could have place this function out in FileTree, but I personally prefer
+    this clear component structure. Because while renderLevels probably could be 
+    used on root level as wel as sublevel, this way there is a clear margin between
+    root and underlying folder levels.
+    I also find it easier to test it this way.
     */
-    return data.map((sublevel) => {
-        const subFolderName = sublevel.folder; // variable to hold the current folder, used for id and state check.
-        return (
-            isOpen && (
-                <Accordion key={subFolderName} isSub={true}>
-                    <AccordionTitle id={subFolderName} action={action} />
-                    {state[subFolderName] &&
-                        sublevel.files.map((file) => {
-                            return (
-                                <File
-                                    key={file}
-                                    isSub={true}
-                                    fileStyle={{
-                                        marginLeft: "1.5rem",
-                                    }}
-                                    file={file}
-                                />
-                            );
-                        })}
-                </Accordion>
-            )
-        );
-    });
+    return renderLevels(data, state, action);
 }
 
 export default SubFolder;
