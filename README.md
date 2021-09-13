@@ -5,7 +5,11 @@ Only a little app that lets you checkout a visualized file tree!
 ## What can you do? 🚀
 
 In this modest little app you can run following scripts.
+
 The app visualizes a given tree structure.
+
+There are two brances, the version/first is hard coded structure, which I started out with,
+the main branch is the final version.
 
 ### `yarn start`
 
