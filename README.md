@@ -5,14 +5,17 @@ Only a little app that lets you checkout a visualized file tree!
 ## What can you do? 🚀
 
 In this modest little app you can run following scripts.
+The app visualizes a given tree structure.
 
 ### `yarn start`
 
-Runs 🏃‍♀️ the app in the development mode. Will spin up on [http://localhost:3000](http://localhost:3000) if available to view.
+Runs 🏃‍♀️ the app in the development mode. Before running start script you need to run `yarn install` to install the project dependencies.
+
+Will spin up on [http://localhost:3000](http://localhost:3000) if available to view.
 
 ### `yarn test`
 
-Launches 🚀 the test runner in the interactive watch mode.@
+Launches 🚀 the test runner in the interactive watch mode.
 
 ### `yarn build`
 
