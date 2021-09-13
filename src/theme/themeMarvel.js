@@ -1,16 +1,13 @@
 import Marvelbg from "../assets/marvel.jpeg";
+import { baseTheme } from "./baseTheme";
 
 export const themeMarvel = {
+    ...baseTheme,
     images: {
         background: Marvelbg,
     },
     colors: {
-        body: "1, 38, 89",
-        primary: "255, 255, 255",
-        secondary: "",
-        font: "",
-    },
-    toggler: {
-        font: "black",
+        ...baseTheme.colors,
+        secondary: "177, 91, 56",
     },
 };

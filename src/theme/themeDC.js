@@ -1,16 +1,13 @@
 import DCbg from "../assets/quinn.jpeg";
+import { baseTheme } from "./baseTheme";
 
 export const themeDC = {
+    ...baseTheme,
     images: {
         background: DCbg,
     },
     colors: {
-        body: "1, 38, 89",
-        primary: "255, 255, 255",
-        secondary: "",
-        font: "",
-    },
-    toggler: {
-        font: "black",
+        ...baseTheme.colors,
+        secondary: "170, 48, 94",
     },
 };
