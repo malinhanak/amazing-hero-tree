@@ -1,11 +1,11 @@
 import { render, screen } from "configs/test-utils";
 import SubFolder from "components/SubFolder";
 import FileList from "file.json";
+import { createTree } from "createTree";
 
 test("should render subfolder files if subfolder is open", () => {
     const state = { marvel: true, black_widow: true };
-    const files = FileList;
-    const data = files[0]["subfolders"];
+    const data = createTree(FileList)[0].children;
     const handleFolderOpenState = () => {};
     render(
         <SubFolder
@@ -21,8 +21,7 @@ test("should render subfolder files if subfolder is open", () => {
 
 test("should not render subfolder files if subfolder is closed", () => {
     const state = { marvel: true };
-    const files = FileList;
-    const data = files[0]["subfolders"];
+    const data = createTree(FileList)[0].children;
     const handleFolderOpenState = () => {};
     render(
         <SubFolder

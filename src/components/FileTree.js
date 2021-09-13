@@ -3,17 +3,17 @@ import { useAccordion } from "hooks/useAccordion";
 import { Accordion, AccordionTitle } from "components/accordion";
 import File from "components/File";
 import SubFolder from "components/SubFolder";
+import { customSorter } from "customSorter";
 
 function FileTree({ tree }) {
     const [state, { open, close }] = useAccordion();
     const handleFolderOpenState = (id) => (state[id] ? close(id) : open(id));
 
-    return tree.flatMap((tree) => {
-        if (Array.isArray(tree)) {
-            // checks if the current index is an object for folder/subfolder or an array of files.
-            return tree.map((file) => <File key={file} file={file} />);
+    return tree.sort(customSorter).map((item) => {
+        if (typeof item === "string") {
+            return <File key={item} file={item} />;
         } else {
-            const folderName = tree.folder; // declaring this here for re-use and readability
+            const folderName = item.name; // declaring this here for re-use and readability
             return (
                 <Accordion key={folderName}>
                     <AccordionTitle
@@ -21,12 +21,13 @@ function FileTree({ tree }) {
                         action={handleFolderOpenState}
                         isOpen={state[folderName]}
                     />
-                    <SubFolder
-                        data={tree.subfolders}
-                        isOpen={state[folderName]}
-                        action={handleFolderOpenState}
-                        state={state}
-                    />
+                    {state[folderName] && (
+                        <SubFolder
+                            data={item.children}
+                            action={handleFolderOpenState}
+                            state={state}
+                        />
+                    )}
                 </Accordion>
             );
         }
