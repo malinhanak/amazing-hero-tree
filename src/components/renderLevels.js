@@ -1,4 +1,4 @@
-import { customSorter } from "customSorter";
+import { customSorter } from "components/customSorter";
 import { Accordion, AccordionTitle } from "./accordion";
 import File from "components/File";
 

@@ -3,7 +3,7 @@ import { useAccordion } from "hooks/useAccordion";
 import { Accordion, AccordionTitle } from "components/accordion";
 import File from "components/File";
 import SubFolder from "components/SubFolder";
-import { customSorter } from "customSorter";
+import { customSorter } from "components/customSorter";
 
 function FileTree({ tree }) {
     const [state, { open, close }] = useAccordion();
