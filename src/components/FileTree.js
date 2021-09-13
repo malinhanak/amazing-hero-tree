@@ -51,4 +51,5 @@ const CloseAllBtn = styled.button`
     margin: 1rem 1rem 1rem auto;
     display: flex;
     align-self: flex-end;
+    transition: background 0.3s;
 `;

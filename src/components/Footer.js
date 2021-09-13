@@ -32,5 +32,7 @@ const FooterStyle = styled.footer`
         font-weight: 200;
         font-size: 1.5rem;
         text-transform: uppercase;
+        color: rgba(${(props) => props.theme.colors.secondary});
+        transition: color 0.3s;
     }
 `;
