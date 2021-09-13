@@ -7,6 +7,7 @@ export const actionsTyped = {
 };
 
 export const useAccordion = () => {
+    const initial = {};
     const reducer = (state, action) => {
         const folderId = action.payload;
         switch (action.type) {
@@ -15,12 +16,12 @@ export const useAccordion = () => {
             case actionsTyped.CLOSE:
                 return { ...state, [folderId]: false };
             case actionsTyped.CLOSE_ALL:
-                return {};
+                return initial;
             default:
                 return state;
         }
     };
-    const [state, dispatch] = useReducer(reducer, {});
+    const [state, dispatch] = useReducer(reducer, initial);
 
     const open = (folderId) =>
         dispatch({ type: actionsTyped.OPEN, payload: folderId });
